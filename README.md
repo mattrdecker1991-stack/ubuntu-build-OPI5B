@@ -41,3 +41,49 @@ sudo snap install firefox
 Audio outから音が出ない場合は、端末から `alsamixer` を起動し、`F6` キーで `Analog` または `rockchip,es8388` を選択して `Output 1` を６０〜６５に設定してください。
 
 ---
+
+
+# Ubuntu 26.04 Custom for Orange Pi 5 / 5 Plus
+
+This is a customized Ubuntu image using the latest mainline kernel.
+
+## Features
+- **Kernel**: Custom kernel (v7.0.x-rockchip)
+- Stability ensured with `CONFIG_EXPERT=n`
+- Optimized for Rockchip RK3588 / RK3588S
+- Optimized settings tailored to individual usage environments
+- **OS**: Ubuntu 26.04 (Resolute)
+- **Lightweight**:
+- **Snap applications are not pre-installed** to keep the initial image size under 2GB.
+- Necessary applications can be added manually after booting.
+
+## Usage
+1. Download `.img.xz` from the Releases page.
+2. Write it to an SSD or microSD card.
+
+### Initial Setup
+Startup behavior varies depending on the model:
+
+- **Orange Pi 5**:
+The GUI setup (oem-config) will start on the first boot. Follow the on-screen instructions to create a user.
+
+- **Orange Pi 5 Plus**:
+The setup wizard may not appear. In that case, log in with the following:
+
+- **User**: `ubuntu` / **Pass**: `ubuntu`
+
+- After logging in, you will be prompted to reset your password immediately.
+
+### Recommended Commands
+To complete the desktop environment or add a browser, run the following commands.
+
+```bash
+# Update your desktop environment to the latest standard state
+sudo apt update && sudo apt install ubuntu-desktop-minimal
+
+# Install Firefox
+sudo snap install firefox
+```
+
+### Audio Settings
+If there is no sound from Audio out, launch `alsamixer` from the terminal, select `Analog` or `rockchip,es8388` using the `F6` key, and set `Output 1` to 60-65.
