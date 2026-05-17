@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ubuntu-image-orangepi-5
+name: ubuntu-image-orangepi-5b
 on: workflow_dispatch
 #workflow_dispatch
 #[push]
@@ -58,9 +58,9 @@ jobs:
         with:
           # 実行するたびにユニークなタグ名（例: build-1, build-2...）を付けます
           tag_name: build-${{ github.run_number }}
-          name: "Orange Pi 5 Disk Image Build ${{ github.run_number }}"
+          name: "Orange Pi 5b Disk Image Build ${{ github.run_number }}"
           body: |
-            Orange Pi 5 自作ディスクイメージ
+            Orange Pi 5b 自作ディスクイメージ
             ビルド日時: ${{ steps.date.outputs.now }}
             ベースカーネル: ${{ steps.kernel.outputs.kernel_version }}
           draft: false
