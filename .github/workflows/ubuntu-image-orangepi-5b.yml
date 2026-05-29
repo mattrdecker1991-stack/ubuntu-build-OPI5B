@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: u-boot
-        run: /bin/bash  ./das-u-boot-5b.sh orangepi-5b-rk3588s
+        run: /bin/bash  ./das-u-boot-5b.sh orangepi-5_defconfig
 
       - name: kernel
         run: /bin/bash ./build-kernel-5b.sh arm64 2>&1|tee log1
