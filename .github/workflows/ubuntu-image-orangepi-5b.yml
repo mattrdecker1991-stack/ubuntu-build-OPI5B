@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ubuntu-image-orangepi-5
+name: ubuntu-image-orangepi-5b
 on: workflow_dispatch
 #workflow_dispatch
 #[push]
