@@ -27,13 +27,12 @@ if [ $mem_size -gt 8 ]; then
 fi
 
 cd $linux_dir
-# git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git -b linux-7.0.y
-git clone --depth 1 https://github.com/torvalds/linux.git -b v7.1-rc5
+git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git -b linux-7.0.y
 
 cd linux
 make defconfig
 
-./scripts/kconfig/merge_config.sh -m .config ../../my-add.txt
+./scripts/kconfig/merge_config.sh -m .config ../../my-add-5b.txt
 
 ./scripts/config --set-val DEBUG_INFO_NONE y
 ./scripts/config --disable DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
